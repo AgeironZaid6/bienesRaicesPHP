@@ -1,0 +1,22 @@
+{
+  "name": "bienesraices",
+  "version": "1.0.0",
+  "description": "Bienes Raices",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "author": "Andres Diaz",
+  "license": "ISC",
+  "devDependencies": {
+    "glob": "^10.3.12",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.75.0",
+    "sharp": "^0.33.3"
+  }
+}
