@@ -18,7 +18,7 @@ incluirTemplate('header', $inicio = true);
             <img src="build/img/icono2.svg" alt="Icono Precio" loading="lazy">
             <h3>Precio</h3>
             <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae
-                dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
+                dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium Voluptates?</p>
         </div>
         <div class="icono">
             <img src="build/img/icono3.svg" alt="Icono Tiempo" loading="lazy">
