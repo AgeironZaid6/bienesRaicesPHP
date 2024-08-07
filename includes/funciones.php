@@ -17,3 +17,12 @@ function estaAutenticado(): bool
     }
     return false;
 }
+
+function nivelUsuario(): int
+{
+    $nivel = $_SESSION['nivel'];
+    if ($nivel < 2) {
+        return 1;
+    }
+    return 2;
+}

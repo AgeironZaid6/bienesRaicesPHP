@@ -2,6 +2,11 @@
 
 require '../includes/funciones.php';
 $auth = estaAutenticado();
+$nivel = nivelUsuario();
+
+if ($nivel < 2) {
+    header('Location: /');
+}
 
 if (!$auth) {
     header('Location: /login');

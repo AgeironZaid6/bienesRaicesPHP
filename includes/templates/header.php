@@ -5,8 +5,7 @@ if (!isset($_SESSION)) {
 }
 
 $auth = $_SESSION['login'] ?? false;
-
-
+$nivel = $_SESSION['nivel'] ?? 1;
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +38,9 @@ $auth = $_SESSION['login'] ?? false;
                         <a href="anuncios.php">Anuncios</a>
                         <a href="blog.php">Blog</a>
                         <a href="contacto.php">Contacto</a>
+                        <?php if ($nivel == 2): ?>
+                            <a href="/admin">Administrar</a>
+                        <?php endif; ?>
                         <?php if ($auth): ?>
                             <a href="cerrar-sesion.php">Cerrar Sesion</a>
                         <?php else: ?>

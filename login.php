@@ -28,6 +28,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 session_start();
                 $_SESSION['usuario'] = $user['email'];
                 $_SESSION['login'] = true;
+                $_SESSION['nivel'] = $user['nivel'];
+
+                switch ($user['nivel']) {
+                    case 1:
+                        header("Location: /index.php");
+                        break;
+                    case 2:
+                        header("Location: /admin");
+                        break;
+                    default:
+                        header("Location: /");
+                        break;
+                }
+
                 header("Location: /index.php");
             }
         } else {
@@ -43,15 +57,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } elseif ($form === 'register') {
         // Proceso de registro
-        //$nombre = $_POST['register-name'];
+        $nombre = $_POST['register-name'];
         $email = $_POST['register-email'];
         $password = $_POST['register-password'];
 
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-        $query = "INSERT INTO usuarios (email, password) VALUES (?, ?)";
+        $query = "INSERT INTO usuarios (email, password, nombre) VALUES (?, ?, ?)";
         $stmt = $db->prepare($query);
-        $stmt->bind_param('ss', $email, $hashed_password);
+        $stmt->bind_param('sss', $email, $hashed_password, $nombre);
         $result = $stmt->execute();
 
         if ($result) {
